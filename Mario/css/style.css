@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.visor,.visor2{
+    display: flex;
+    width: 200px;
+    font-size: 1rem;
+    margin: 10px;
+    
+}
+
+.visor2{
+    height: 80px;
+    list-style: none;
+    font-size: 1.8rem;
+}
+
+.game-board {
+    width: 100%;
+    height: 70vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF );
+}
+
+.ground{
+    width: 100%;
+    height: 30vh;
+    background-color:rgb(80, 40, 12);
+    background-image:url(../assets/land.png);
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear;
+}
+
+.mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0px;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds{
+    position: absolute;
+    width: 700px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.gameOver{
+    position: absolute;
+    width: 100%;
+    height: 237px;
+    display: none;
+    align-content: center;
+    justify-content: center;
+    top: 20%;
+}
+
+.gameOverImg{ 
+    width: 236px;
+    height: 236px;
+    background-image: url(../assets/gameOver.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+
+}
+
+.restart{
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    display: none;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn{
+    padding: 1%;
+    border-radius: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    cursor: pointer;
+    color: black;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation{
+    from {
+        right: -700px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .mario {
+        width: 120px;
+    }
+    .pipe{
+        width: 60px;
+        animation: pipe-animation 1.5s infinite linear;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .mario {
+        width: 110px;
+    }
+    .pipe{
+        width: 50px;
+        animation: pipe-animation 1s infinite linear;
+    }
+}
